@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="OnlineLibrary">
+<head>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+    <script
+            src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+            integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+            crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+
+
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+
+    <script src="views/user/controllers/user-login.controller.client.js"></script>
+    <script src="views/user/controllers/user-register.controller.client.js"></script>
+    <script src="views/user/controllers/user-profile.controller.client.js"></script>
+    <script src="views/book/controllers/book-home.controller.client.js"></script>
+    <script src="views/book/controllers/productdescription.controller.client.js"></script>
+    <script src="views/book/controllers/inventory.controller.client.js"></script>
+    <script src="views/book/controllers/requests.controller.client.js"></script>
+    <script src="views/book/controllers/rentals.controller.client.js"></script>
+    <script src="views/user/controllers/student-likes.controller.client.js"></script>
+    <script src="views/user/controllers/student-rentals.controller.client.js"></script>
+    <script src="views/user/controllers/student-wishes.controller.client.js"></script>
+    <script src="views/user/controllers/student-libraries.controller.client.js"></script>
+    <script src="views/user/controllers/admin-home.controller.client.js"></script>
+    <script src="views/user/controllers/admin-create.controller.client.js"></script>
+    <script src="views/user/controllers/admin-update.controller.client.js"></script>
+
+    <script src="services/user.service.client.js"></script>
+    <script src="services/book.service.client.js"></script>
+    <script src="services/library.service.client.js"></script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <title>Project Home Page</title>
+</head>
+<body>
+<div ng-view></div>
+</body>

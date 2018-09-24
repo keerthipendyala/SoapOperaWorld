@@ -1,0 +1,76 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a href="#/userlogin" class="btn btn-sm btn-danger">Logout</a>
+            </a>
+        </div>
+        <div class="navbar-header">
+            <span id="open" ng-click="model.openNav()" class="glyphicon glyphicon-th pull-left">
+            </span>
+            <a class="navbar-brand" href="#/user/{{model.uid}}/book">
+                <b class="kp-navbar-text pull-right">OnlineLibrary</b>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div id="body-div">
+        <div id="mySidenav" class="sidenav">
+      <span ng-click="model.closeNav()" class="glyphicon glyphicon-remove pull-right">
+            </span>
+            <div ng-show="model.uid">
+                <a href="#/user/{{model.uid}}/book">Search New Books</a>
+                <a href="#/user/{{model.uid}}/booksLiked">Books Liked</a>
+                <a href="#/user/{{model.uid}}/booksWishlisted">Books Wishlisted</a>
+            </div>
+        </div>
+        <div id="main">
+
+            <h2>{{model.libBook.title}}</h2> is available in the following places:
+
+            <br/>
+            <table class="table table-responsive">
+                <thead>
+                <tr>
+                    <th>Library Name</th>
+                    <th class="visible-md visible-lg">Library Location</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody ng-repeat="library in model.librariesInfo">
+                <td>
+                    <h4>{{library.name}}</h4>
+
+                </td>
+                <td class="visible-md visible-lg">
+                    <h4>{{library.location}}</h4>
+                </td>
+                <td>
+                    <button ng-show="model.requested[$index]" type="button"
+                            class="btn btn-warning disabled">
+                        Request Sent
+                    </button>
+                    <a ng-hide="model.requested[$index]"
+                       ng-click="model.createBookRequest(library._id, model.libBook._id)" class="btn btn-sm btn-primary">Send Book request</a>
+                </td>
+                <br/>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a href="#/user/{{model.uid}}">
+            <span class="glyphicon glyphicon-user">
+            </span>
+            </a>
+        </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+            </a>
+        </div>
+    </div>
+</nav>

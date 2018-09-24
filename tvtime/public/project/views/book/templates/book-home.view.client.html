@@ -1,0 +1,101 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a href="#/userlogin" class="btn btn-sm btn-danger">Logout</a>
+            </a>
+        </div>
+        <div class="navbar-header">
+            <span id="open" ng-click="model.openNav()" class="glyphicon glyphicon-th pull-left">
+            </span>
+            <a class="navbar-brand" href="#/user/{{model.uid}}/book">
+                <b class="kp-navbar-text pull-right">OnlineLibrary</b>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div id="body-div">
+        <div class="container">
+
+            <div id="mySidenav" class="sidenav">
+      <span ng-click="model.closeNav()" class="glyphicon glyphicon-remove pull-right">
+            </span>
+                <div ng-show="model.lid">
+                    <a href="#/user/{{model.lid}}/book">Search New Books</a>
+                    <a href="#/user/{{model.lid}}/inventory/{{model.library._id}}">Inventory</a>
+                    <a href="#/user/{{model.lid}}/requests/{{model.library._id}}">Rent Requests</a>
+                    <a href="#/user/{{model.lid}}/rentals/{{model.library._id}}">Rentals</a>
+
+                </div>
+                <div ng-show="model.sid">
+                    <a href="#/user/{{model.sid}}/book">Search New Books</a>
+                    <a href="#/user/{{model.sid}}/booksLiked">Books Liked</a>
+                    <a href="#/user/{{model.sid}}/booksWishlisted">Wishlist</a>
+                    <a href="#/user/{{model.sid}}/studentRentals">Rentals</a>
+                </div>
+            </div>
+            <div id="main">
+                <br/>
+                <div ng-hide="model.lid">
+                    <h2>Welcome to the Online Library !</h2>
+
+                    <br/>
+                    Search for books to check where they are available..
+                </div>
+
+                <div ng-show="model.lid">
+                    <span style="font-size: 30px;color: #1b6d85">{{model.library.name}} Staff</span>
+
+                    <br/>
+                    <br/>
+                    <h3>SEARCH NEW BOOKS</h3>
+
+                    <p> Search for books and add them to the library</p>
+                </div>
+
+                <br/>
+
+                <div class="input-group">
+                    <input ng-model="book.name" type="text" class="form-control" placeholder="Enter Book Title!"/>
+                    <span class="input-group-addon">
+            <a>
+               <i ng-click="model.searchBooks(book.name)" class="fa fa-search"></i>
+            </a></span>
+                </div>
+            </div>
+        </div>
+
+        <br/>
+
+        <div ng-show="model.message" class="alert alert-danger" role="alert">
+            {{model.message}}
+        </div>
+
+        <div class="row container-fluid">
+            <div ng-repeat="showbook in model.bookTitleResult">
+                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" ng-if="showbook.volumeInfo.imageLinks.thumbnail">
+                    <a href="#/user/{{model.uid}}/search/{{showbook.id}}">
+                        <img class="img-responsive-home thumbnail"
+                             ng-src={{showbook.volumeInfo.imageLinks.thumbnail}}
+                             alt="{{showbook.volumeInfo.imageLinks.thumbnail}}" id="books"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a href="#/user/{{model.uid}}">
+            <span class="glyphicon glyphicon-user">
+            </span>
+            </a>
+        </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+            </a>
+        </div>
+    </div>
+</nav>

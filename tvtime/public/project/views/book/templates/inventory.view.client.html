@@ -1,0 +1,71 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a href="#/userlogin" class="btn btn-sm btn-danger">Logout</a>
+            </a>
+        </div>
+        <div class="navbar-header">
+            <span id="open" ng-click="model.openNav()" class="glyphicon glyphicon-th pull-left">
+            </span>
+            <a class="navbar-brand" href="#/user/{{model.librarianId}}/book">
+                <b class="kp-navbar-text pull-right">OnlineLibrary</b>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div id="body-div">
+        <div id="mySidenav" class="sidenav">
+      <span ng-click="model.closeNav()" class="glyphicon glyphicon-remove pull-right">
+            </span>
+            <div ng-show="model.librarianId">
+                <a href="#/user/{{model.librarianId}}/book">Search New Books</a>
+                <a href="#/user/{{model.librarianId}}/inventory/{{model.libraryId}}">Inventory</a>
+                <a href="#/user/{{model.librarianId}}/requests/{{model.libraryId}}">Rent Requests</a>
+                <a href="#/user/{{model.librarianId}}/rentals/{{model.libraryId}}">Rentals</a>
+            </div>
+        </div>
+        <div id="main">
+            <table class="table table-responsive">
+                <thead>
+                <tr>
+                    <th>Book Cover</th>
+                    <th class="visible-md visible-lg">Book Name</th>
+                    <th>Count</th>
+                </tr>
+                </thead>
+                <tbody ng-repeat="book in model.libBooks">
+                <td>
+                    <a href="#/user/{{model.librarianId}}/search/{{book.bookIsbn}}">
+                        <img ng-src="{{book.image}}" class="img-circle" alt="Cinque Terre" width="275" height="250">
+                    </a>
+                </td>
+                <td class="visible-md visible-lg">
+                    <a href="#/user/{{model.librarianId}}/search/{{book.bookIsbn}}">
+                        <h4>{{book.title}}</h4>
+                    </a>
+                </td>
+                <td>
+                    <h4>{{book.count}}</h4>
+                </td>
+                <br/>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a href="#/user/{{model.uid}}">
+            <span class="glyphicon glyphicon-user">
+            </span>
+            </a>
+        </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+            </a>
+        </div>
+    </div>
+</nav>

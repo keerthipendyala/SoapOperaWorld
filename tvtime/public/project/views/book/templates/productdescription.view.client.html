@@ -1,0 +1,129 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-text pull-right">
+                <a ng-hide="model.uid" href="#/userlogin" class="btn btn-sm btn-primary">Login</a>
+            </div>
+            <div ng-hide="model.gid" class="navbar-text pull-right">
+                <a href="#/userlogin" class="btn btn-sm btn-danger">Logout</a>
+                </a>
+            </div>
+            <div ng-show="model.gid" class="navbar-text pull-right">
+                <a href="#/userlogin" class="btn btn-sm btn-danger">Sign In to Continue</a>
+
+                </a>
+            </div>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#/user/{{model.uid}}/book">
+                    <b class="kp-navbar-text">OnlineLibrary</b>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div id="body-div">
+        <div class="container-fluid">
+            <div class="col-sm-4">
+                <img class="img-rounded img-pos img-poster"
+                     ng-src="{{model.product.volumeInfo.imageLinks.smallThumbnail}}"
+                     alt="No preview available"/>
+            </div>
+            <div class="col-sm-3">
+                <h1><b>{{model.product.volumeInfo.title}}</b></h1>
+                <br/>
+
+                <div>
+
+                    <div ng-if="model.product.volumeInfo.categories">
+                        <h6>CATEGORY</h6>
+                        <a ng-repeat="genre in model.product.volumeInfo.categories">
+                            <button style="padding-right: 10px" class="btn-sm btn-h" ng-disabled="true">{{genre}}
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <h6>RATING</h6>
+                <i class="fa fa-line-chart"></i>
+                {{model.product.volumeInfo.maturityRating}}
+            </div>
+
+            <br/>
+            <div class="form-group pull-right" ng-show="model.lid">
+                <span style="color: lightcyan"> Add to library </span> :
+                <span style="color: #1b6d85 ; font-size: 20px;">{{model.library.name}}</span>
+                <div>
+                    Count :
+                    <input id="money" ng-model="book.count" type="number" name="quantity">
+                    <a class="btn btn-primary btn-circle pull-right"
+                       ng-click="model.addBook(book)">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div ng-show="model.error" class="alert alert-danger" role="alert">
+                    {{model.error}}
+                </div>
+
+                <div ng-show="model.message" class="alert alert-success" role="alert">
+                    {{model.message}}
+                </div>
+            </div>
+            <div ng-show="model.sid">
+                <button ng-hide="model.like" ng-click="model.checkOrCreateBook('like')" class="btn btn-circle btn-info">
+                    <i class="fa fa-thumbs-up"></i></button>
+                <button ng-show="model.like" ng-click="model.undolike()" class="btn btn-circle btn-info"><i
+                        class="fa fa-thumbs-down"></i></button>
+                <button ng-hide="model.wish" ng-click="model.checkOrCreateBook('wish')"
+                        class="btn btn-circle btn-danger"><i
+                        class="fa fa-heart-o"></i></button>
+                <button ng-show="model.wish" ng-click="model.removefromwishlist()"
+                        class="btn btn-circle btn-danger"><i
+                        class="fa fa-heart"></i></button>
+                <a class="btn btn-success btn-sm"
+                   href="#/user/{{model.sid}}/search/{{model.resId}}/findLibraries">Find Libraries</a>
+            </div>
+            <br/>
+        </div>
+
+        <div class="container-fluid">
+
+            <h3> Subtitle</h3>
+            {{model.product.volumeInfo.subtitle}}
+
+            <h3>Authors</h3>
+            <a ng-repeat="author in model.product.volumeInfo.authors">
+                {{author}}
+            </a>
+
+            <h3>About
+                <i class="fa fa-file-text" aria-hidden="true"></i>
+            </h3>
+            {{model.product.volumeInfo.description}}
+            <br/>
+
+            <h3>Page Count</h3>
+            {{model.product.volumeInfo.pageCount}}
+
+            <h3>Check on playstore</h3>
+            <a href="{{model.product.volumeInfo.infoLink}}">{{model.product.volumeInfo.infoLink}}</a>
+
+            <h3>Published Date</h3>
+            {{model.product.volumeInfo.publishedDate}}
+        </div>
+
+
+    </div>
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a href="#/user/{{model.uid}}">
+            <span class="glyphicon glyphicon-user">
+            </span>
+            </a>
+        </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+            </a>
+        </div>
+    </div>
+</nav>

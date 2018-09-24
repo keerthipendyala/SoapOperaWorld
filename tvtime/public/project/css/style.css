@@ -1,0 +1,295 @@
+input.form-control {
+    margin-bottom: 5px;
+}
+
+body {
+    color: #faebcc;
+    background-color: #121212;
+}
+
+#body-div{
+    padding-top : 70px;
+    padding-bottom : 200px;
+}
+
+a,u{
+    text-decoration: none !important;
+
+}
+
+h1{
+    color : #1b6d85;
+}
+
+h3{
+    color: brown;
+}
+
+h6{
+    color: #1b6d85;
+}
+
+
+.img-pos{
+    width: 100%;
+    height: auto;
+}
+
+.img-desc{
+    height:auto;
+    width:auto;
+}
+
+
+.img-cast{
+    height:100px;
+    width:70px;
+}
+
+.img-responsive{
+    max-width:250px;
+    max-height:250px;
+}
+
+.img-responsive-home {
+    max-height: 250px;
+    max-width: 200px;
+}
+
+@media(max-width: 500px){
+    .img-responsive-home {
+        max-height: 100px;
+        max-width: 90px;
+    }
+}
+.thumbnail:hover{
+    background-color: darkred;
+    transform: scale3d(1.1,1.1,1.1);
+}
+
+#money{
+    color:black;
+}
+
+.navbar{
+    background-color: black;
+    opacity:0.87;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    height:60px;
+}
+
+.kp-navbar-text:hover{
+    padding-left:10px;
+    font-weight: bold;
+    color: red;
+}
+
+img.avatar {
+    display: block;
+    margin: auto;
+    text-align: center;
+    width: 150px;
+    width: 20%;
+    border-radius: 50%;
+}
+
+.w3-card-4{
+    background-color : black;
+}
+.kp-navbar-text{
+    font-family: 'Open Sans',serif;
+    font-weight: bold;
+    font-size: x-large;
+    color: red;
+}
+
+.glyphicon{
+    color: white;
+}
+
+.glyphicon:hover{
+    color: red;
+}
+
+.kp-gly{
+    position: absolute;
+    right: 30px;
+    background-color: white;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    border-bottom-left-radius: 5px;
+    opacity: 0.9;
+}
+
+
+.kp-gly-image{
+    z-index:2;
+    position :absolute;
+}
+
+.kp-list{
+    list-style-type:none;
+    padding-left:15px;
+}
+
+.kp-list-item{
+    margin-top:10px;
+    margin-bottom:10px;
+    cursor: pointer;
+}
+
+.kp-right-pane{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow-y: auto;
+}
+
+.kp-border{
+    border-left:1px solid lightslategrey;
+}
+
+.jga-toolbar {
+    position: absolute;
+    right: 30px;
+    background-color: white;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    border-bottom-left-radius: 5px;
+    opacity: 0.7;
+    z-index : 2;
+}
+
+.youtube-widget iframe {
+    position: relative;
+    /*padding-bottom: 56.25%;*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+#open{
+    padding-top: 15px;
+    size: 40px;
+}
+
+table {
+    background: black;
+}
+td {
+    background: black;
+    color: white;
+    padding: 15px;
+}
+
+.youtube-widget iframe {
+    width: 100%;
+    height: 280px;
+}
+
+.btn-h{
+    color: #f7f7f7;
+    background: -webkit-linear-gradient(top, #aaa 0,#000 30%, #555 100%);
+    -webkit-box-shadow: inset 0 -1em 0 .2em rgba(0,0,0,.55);
+    border: 1px solid #000;
+    -webkit-border-radius:1em;
+    padding:.67em;
+
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 50%;
+}
+
+.img-text{
+    overflow:hidden;
+    width:100px;
+    height:70px;
+}
+
+.img-poster{
+    height : 275px;
+}
+
+table, th {
+    color: #1b6d85;
+}
+
+table ,td{
+    color : white;
+}
+
+form.submitted .ng-invalid
+{
+    border: 1px solid red;
+}
+
+.text-error{
+    color: whitesmoke;
+}
+
+h2{
+    color: #1b6d85;
+}

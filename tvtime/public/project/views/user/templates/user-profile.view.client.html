@@ -1,0 +1,78 @@
+<div class="container-fluid">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-text pull-right">
+                <a ng-click=model.update(model.user)>
+            <span class="glyphicon glyphicon-ok">
+            </span>
+                </a>
+            </div>
+            <div class="navbar-header">
+            </span>
+                <a class="navbar-brand" href="#/user/{{model.userId}}/book">
+                    <b class="kp-navbar-text pull-right">OnlineLibrary</b>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="body-div">
+        <div id="main">
+            <h1>Profile</h1>
+            <div class="alert alert-danger" ng-show="model.error">
+                {{model.error}}
+            </div>
+
+
+            <div class="alert alert-success" ng-show="model.message">
+                {{model.message}}
+            </div>
+            <br/>
+            <form>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input ng-model="model.user.username" type="text" class="form-control" id="username">
+                </div>
+                <div class="form-group">
+                    <label for="email">Password</label>
+                    <input ng-model="model.user.password" type="password" class="form-control" id="password">
+                </div>
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input ng-model="model.user.firstName" type="text" class="form-control" id="first-name">
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input ng-model="model.user.lastName" type="text" class="form-control" id="last-name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input ng-model="model.user.email" type="email" class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input ng-model="model.user.phone" type="text" class="form-control" id="phone">
+                </div>
+            </form>
+
+            <a class="btn btn-primary  btn-block" ng-click="model.logout()">Logout</a>
+
+        </div>
+    </div>
+    <div class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container-fluid">
+            <div class="navbar-text pull-right">
+                <a href="#/user/{{model.userId}}">
+            <span class="glyphicon glyphicon-user">
+            </span>
+                </a>
+            </div>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                </a>
+            </div>
+        </div>
+    </div>
+    </nav>
+</div>

@@ -1,0 +1,67 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a href="#/userlogin" class="btn btn-sm btn-danger">Logout</a>
+            </a>
+        </div>
+        <div class="navbar-header">
+            <span id="open" ng-click="model.openNav()" class="glyphicon glyphicon-th pull-left">
+            </span>
+            <a class="navbar-brand" href="#/user/{{model.uid}}/book">
+                <b class="kp-navbar-text pull-right">OnlineLibrary</b>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div id="body-div">
+        <div id="mySidenav" class="sidenav">
+      <span ng-click="model.closeNav()" class="glyphicon glyphicon-remove pull-right">
+            </span>
+            <div ng-show="model.uid">
+                <a href="#/user/{{model.uid}}/book">Search New Books</a>
+                <a href="#/user/{{model.uid}}/booksLiked">Likes</a>
+                <a href="#/user/{{model.uid}}/booksWishlisted">Wishlist</a>
+                <a href="#/user/{{model.uid}}/studentRentals">Rentals</a>
+            </div>
+        </div>
+        <div id="main">
+            <table class="table table-responsive">
+                <thead>
+                <tr>
+                    <th>Book Cover</th>
+                    <th class="visible-md visible-lg">Book Name</th>
+                </tr>
+                </thead>
+                <tbody ng-repeat="book in model.libBooks">
+                <td>
+                    <a href="#/user/{{model.uid}}/search/{{book.bookIsbn}}">
+                        <img ng-src="{{book.image}}" class="img-circle" alt="Cinque Terre" width="275" height="250">
+                    </a>
+                </td>
+                <td class="visible-md visible-lg">
+                    <a href="#/user/{{model.uid}}/search/{{book.bookIsbn}}">
+                        <h4>{{book.title}}</h4>
+                    </a>
+                </td>
+                <br/>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a href="#/user/{{model.uid}}">
+            <span class="glyphicon glyphicon-user">
+            </span>
+            </a>
+        </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+            </a>
+        </div>
+    </div>
+</nav>

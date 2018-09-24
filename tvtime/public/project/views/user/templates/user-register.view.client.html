@@ -1,0 +1,144 @@
+<div class="container-fluid">
+    <div class="body-div">
+
+        <h1>Register</h1>
+
+        <div ng-show="model.error" class="alert alert-danger" role="alert">
+            {{model.error}}
+        </div>
+
+        <div ng-show="model.message" class="alert alert-danger" role="alert">
+            {{model.message}}
+        </div>
+
+        <div ng-show="model.sucessmessage" class="alert alert-success" role="alert">
+            {{model.sucessmessage}}
+        </div>
+
+
+        <form name="formRegister" ng-class="{submitted:formRegister.submitted}">
+            <div class="form-group">
+                <img class="avatar form-group" ng-src="{{user.gender}}"/>
+            </div>
+
+            <h5>FirstName</h5>
+            <div class="form-group">
+                <input ng-model="user.firstName"
+                       name = "firstName"
+                       type="text"
+                       class="form-control"
+                       placeholder="Alice"
+                       required/>
+                <span class="text-error"
+                      data-ng-show="formRegister.submitted && formRegister.firstName.$error.required">
+                </span>
+            </div>
+            <h5>LastName</h5>
+            <div class="form-group">
+                <input ng-model="user.lastName"
+                       name = "lastName"
+                       type="text"
+                       class="form-control"
+                       placeholder="Wonderland"
+                       required/>
+                <span class="text-error"
+                      data-ng-show="formRegister.submitted && formRegister.lastName.$error.required">
+                </span>
+            </div>
+            <h5>Gender</h5>
+            <div class="form-group">
+                <select class="form-control" ng-model="user.gender">
+                    <option value="" disabled selected>Gender</option>
+                    <option value="https://www.w3schools.com/w3css/img_avatar2.png">Male</option>
+                    <option value="https://www.w3schools.com/howto/img_avatar2.png">Female</option>
+                </select>
+            </div>
+
+            <h5>Username</h5>
+            <div class="form-group">
+                <input ng-model="user.username"
+                       name="username"
+                       type="text"
+                       class="form-control"
+                       placeholder="alice"
+                       required/>
+                <span class="text-error"
+                      data-ng-show="formRegister.submitted && formRegister.username.$error.required">
+                </span>
+            </div>
+
+            <h5>Password</h5>
+            <div class="form-group">
+                <input ng-model="user.password"
+                       name="password"
+                       type="password"
+                       class="form-control"
+                       placeholder="*********"
+                       required/>
+                <span class="text-error"
+                      data-ng-show="formRegister.submitted && formRegister.username.$error.required">
+                </span>
+            </div>
+
+            <h5>Verify Password</h5>
+            <div class="form-group">
+                <input ng-model="user.verifypassword"
+                       name="verifypass"
+                       type="password"
+                       class="form-control"
+                       placeholder="*********"
+                       required/>
+                <span class="text-error"
+                      data-ng-show="formRegister.submitted && formRegister.verifypass.$error.required">
+                </span>
+            </div>
+
+            <div class="form-group">
+                <h6>EMAIL</E></h6>
+                </span> <input ng-model="user.email" name="email" type="email"
+                               maxlength="40" class="form-control" placeholder="bob@gmail.com"/>
+            </div>
+
+            <h5>Purpose</h5>
+            <div class="form-group">
+                <select class="form-control" ng-model="user.type" name="usertype" required>
+                    <option value="" disabled selected>Please Select</option>
+                    <option value="librarian">Librarian</option>
+                    <option value="student">Student</option>
+                    <span class="text-error"
+                          data-ng-show="formRegister.submitted && formRegister.usertype.$error.required">
+                </span>
+                </select>
+            </div>
+
+            <div ng-show="user.type === 'librarian'">
+            <h5>Select Library</h5>
+            <div class="form-group">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                        <div ng-show="model.selectedLib.name">
+                        {{model.selectedLib.name}}
+                            <span class="caret"></span>
+                        </div>
+                        <div ng-hide="model.selectedLib.name">
+                            View Options
+                            <span class="caret"></span>
+                        </div>
+                        </button>
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="library in model.libraries">
+                            <a ng-click="model.changeSelectedLibrary(library)">{{library.name}}</a>
+                        </li>
+                    </ul>
+            </div>
+            </div>
+            </div>
+
+
+            <a ng-click="model.register(user)"
+               class="btn btn-primary btn-block">Register</a>
+            <a class="btn btn-danger  btn-block"
+               href="#/userlogin">Cancel</a>
+        </form>
+    </div>
+</div>

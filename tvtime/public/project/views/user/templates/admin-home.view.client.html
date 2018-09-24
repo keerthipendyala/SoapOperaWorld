@@ -1,0 +1,62 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a href="#/userlogin" class="btn btn-sm btn-danger">Logout</a>
+            </a>
+        </div>
+        <div class="navbar-header">
+            <span id="open" ng-click="model.openNav()" class="glyphicon glyphicon-th pull-left">
+            </span>
+            <a class="navbar-brand" href="#/admin/AllUsers/{{model.aid}}">
+                <b class="kp-navbar-text pull-right">OnlineLibrary</b>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div id="body-div">
+        <div class="container">
+            <div id="mySidenav" class="sidenav">
+      <span ng-click="model.closeNav()" class="glyphicon glyphicon-remove pull-right">
+            </span>
+                <a href="#/admin/AllUsers/{{model.aid}}">All Users</a>
+                <a href="#/admin/CreateUser/{{model.aid}}">Create User</a>
+            </div>
+            <div id="main">
+                <table class="table table-responsive">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Type</th>
+                        <th>Contact</th>
+                    </tr>
+                    </thead>
+                    <tbody ng-repeat="user in model.allUsers">
+                    <td>
+                        {{user.firstName}} {{user.lastName}}
+                    </td>
+                    <td>
+                        {{user.username}}
+                    </td>
+                    <td>
+                        {{user.type}}
+                    </td>
+                    <td>
+                        {{user.email}}
+                    </td>
+                    <td><a style="color: #507dff" href="#/admin/{{model.aid}}/UpdateUser/{{user._id}}">
+                        <i class="fa fa-cog"></i></a>
+                        <a style="color: red" ng-click="model.deleteUser(user._id)">
+                            <i class="fa fa-times"></i></a>
+                    </td>
+                    </tbody>
+                </table>
+                <a href="#/admin/CreateUser/{{model.aid}}" class="btn btn-sm btn-success pull-right">Add</a>
+            </div>
+        </div>
+
+        <br/>
+    </div>
+</div>
