@@ -1,0 +1,88 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4 hidden-xs">
+                    <div class="navbar-text pull-left">
+                        <a href="#/user/{{model.userId}}/website">
+            <span class="glyphicon glyphicon-chevron-left">
+            </span>
+                        </a>
+                    </div>
+                    <div class="navbar-text pull-right">
+                        <a href="#/user/{{model.userId}}/website/new">
+            <span class="glyphicon glyphicon-plus">
+            </span>
+                        </a>
+                    </div>
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#/user/{{model.userId}}/website">
+                            <b class="kp-navbar-text">Websites</b>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="visible-xs navbar-text pull-left">
+                        <a href="#/user/{{model.userId}}/website">
+                 <span class="glyphicon glyphicon-chevron-left">
+                 </span>
+                        </a>
+                    </div>
+                    <div class="navbar-text pull-right">
+                        <a ng-click="model.createWebsite(website)">
+                           <span class="glyphicon glyphicon-ok">
+                           </span>
+                        </a>
+                    </div>
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#/user/{{model.userId}}/website/new"><b class="kp-navbar-text">New
+                            Website</b>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="col-sm-4 hidden-xs">
+            <div class="container-fluid">
+                <ul class="kp-list">
+                    <li ng-repeat="website in model.websites" class="kp-list-item">
+                        <a href="#/user/{{model.userId}}/website/{{website._id}}/page">{{website.name}}</a>
+                        <a href="#/user/{{model.userId}}/website/{{website._id}}" class="container-fluid pull-right">
+                <span class="glyphicon glyphicon-cog">
+                </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="col-xs-12 col-sm-8 kp-right-pane kp-border container">
+                <label for="Name">Name</label>
+                <input ng-model="website.name" class="form-control" id="Name" placeholder="Name"/>
+
+                <label for="Description">Description</label>
+                <textarea ng-model="website.description" rows="5" class="form-control" id="Description"
+                          placeholder="Description"></textarea>
+            </div>
+        </div>
+    </div>
+
+
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container-fluid">
+            <div class="navbar-text pull-right">
+                <a href="#/user/{{model.userId}}">
+            <span class="glyphicon glyphicon-user">
+            </span>
+                </a>
+            </div>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                </a>
+            </div>
+        </div>
+    </nav>
+</div>

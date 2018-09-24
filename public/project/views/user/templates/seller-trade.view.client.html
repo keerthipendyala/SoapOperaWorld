@@ -1,0 +1,82 @@
+<div class="container-fluid">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar-header">
+            <a>
+            <span id="open" ng-click="model.openNav()" class="glyphicon glyphicon-th pull-left">
+            </span>
+            </a>
+            <a class="navbar-brand" href="#/show">
+                <b class="kp-navbar-text pull-right">S.O.W</b>
+            </a>
+        </div>
+    </nav>
+
+
+    <div id="mySidenav" class="sidenav">
+        <a>
+      <span ng-click="model.closeNav()" class="glyphicon glyphicon-remove pull-right">
+            </span>
+        </a>
+        <div ng-show="model.sid">
+            <a href="#/user">Profile</a>
+            <a href="#/seller/forsale">Inventory</a>
+            <a href="#/seller/trade">Trade</a>
+        </div>
+    </div>
+
+    <div id="body-div">
+        <div id="main">
+            <div class="alert alert-danger" ng-show="model.error">
+                {{model.error}}
+            </div>
+
+
+            <div class="alert alert-success" ng-show="model.message">
+                {{model.message}}
+            </div>
+        <div ng-hide="model.message">
+            <table class="table table-responsive">
+                <thead>
+                <tr>
+                    <th class="hidden-xs">Trade ID</th>
+                    <th>Show name</th>
+                    <th class="visible-md visible-lg">Show Poster</th>
+                    <th>Buyer Name</th>
+                    <th class="hidden-xs">Buyer Email</th>
+                    <th class="hidden-xs">Buyer Phone</th>
+                </tr>
+                </thead>
+                <tbody ng-repeat="buyer in model.buyerInfo track by $index">
+                <tr ng-if="buyer.selle === true">
+                    <td class="hidden-xs">{{model.sellerTrade[$index]._id}}</td>
+                    <td>{{model.shows_info[$index].name}}</td>
+                    <td class="visible-md visible-lg">  <a href="#/user/search/{{show.id}}">
+                        <img ng-src="https://image.tmdb.org/t/p/w500/{{model.shows_info[$index].poster_path}}" class="img-circle img-responsive"
+                             alt="No poster available" width="275" height="250">
+                    </a>
+                    </td>
+                    <td >{{buyer.name}}</td>
+                    <td class="hidden-xs">{{buyer.email}}</td>
+                    <td class="hidden-xs">{{buyer.phone}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a href="#/user">
+            <span class="glyphicon glyphicon-user">
+            </span>
+            </a>
+        </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+            </a>
+        </div>
+    </div>
+</nav>

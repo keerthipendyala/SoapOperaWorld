@@ -1,0 +1,71 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a ng-hide ="model.uid" href="#/userlogin" class="btn btn-sm btn-primary">Login</a>
+            </a>
+        </div>
+        <div ng-show ="model.uid" class="navbar-text pull-right">
+            <a ng-click = "model.logout()" class="btn btn-sm btn-danger">Logout</a>
+            </a>
+        </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/show">
+                <b class="kp-navbar-text">S.O.W</b>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class= "container-fluid" id="body-div">
+
+<div ng-show="model.error" class="alert alert-danger" role="alert">
+    {{model.error}}
+</div>
+
+<div  ng-show="model.message" class="alert alert-success" role="alert">
+    {{model.message}}
+</div>
+
+
+<h1>Seller Information</h1>
+
+
+<h3>Name :</h3>
+   <h4>{{model.seller.firstName}} {{model.seller.lastName}}</h4>
+
+
+    <h3>Contact :</h3>
+    <div>
+    <i class="fa fa-envelope" aria-hidden="true"></i>
+        {{model.seller.email}}
+    </div>
+
+    <div>
+        <i class="fa fa-mobile fa-lg" aria-hidden="true"></i>
+        {{model.seller.phone}}
+    </div>
+
+<a class="btn btn-primary btn-block" ng-disabled="model.outofstock"
+   ng-click="model.confirmpurchase()">
+    Are u sure you want to purchase this item?
+</a>
+
+<a class="btn btn-primary btn-block" ng-show="model.outofstock"
+   href="#/user/search/{{model.sid}}">
+    Go back to seller list!
+</a>
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a href="#/user">
+            <span class="glyphicon glyphicon-user">
+            </span>
+            </a>
+        </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+            </a>
+        </div>
+    </div>
+</nav>

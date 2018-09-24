@@ -1,0 +1,75 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-text pull-right">
+                <a ng-hide ="model.uid" href="#/userlogin" class="btn btn-sm btn-primary">Login</a>
+                </a>
+            </div>
+            <div ng-show ="model.uid" class="navbar-text pull-right">
+                <a ng-click = "model.logout()" class="btn btn-sm btn-danger">Logout</a>
+                </a>
+            </div>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#/show">
+                    <b class="kp-navbar-text">S.O.W</b>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="body-div">
+
+        <div ng-show="model.error" class="alert alert-danger" role="alert">
+            {{model.error}}
+        </div>
+
+        <div  ng-show="model.message" class="alert alert-warning" role="alert">
+            {{model.message}}
+        </div>
+
+        <div class="container-fluid" ng-hide="model.message">
+            <table class="table table-responsive">
+                <thead>
+                <tr>
+                    <th class="hidden-xs">FirstName</th>
+                    <th>LastName</th>
+                    <th class="hidden-xs">Email</th>
+                    <th class="hidden-xs" >Phone</th>
+                    <th class="hidden-xs">Count</th>
+                    <th>Favourite </th>
+                    <th>Buy</th>
+                </tr>
+                </thead>
+                <tbody ng-repeat="seller in model.sellerinfo">
+                <tr ng-if="seller.showcount !== 0">
+                    <td class="hidden-xs">{{seller.firstName}}</td>
+                    <td>{{seller.lastName}}</td>
+                    <td class="hidden-xs">{{seller.email}}</td>
+                    <td class="hidden-xs">{{seller.phone}}</td>
+                    <td class="hidden-xs">{{seller.showcount}}</td>
+                    <td><a ng-hide="seller.fav" ng-click="model.addToFav(seller._id,$index)"><i class="fa fa-star-o fa-2x" aria-hidden="true" style="color:gold"></i></a>
+                        <a ng-show="seller.fav" ng-click="model.removeFav(seller._id,$index)"><i class="fa fa-star fa-2x" aria-hidden="true"style="color:gold"></i></a>
+                    </td>
+                    <td>
+                        <button ng-click="model.confirmpurchase(seller)" class="btn btn-sm btn-primary">Buy</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a href="#/user">
+            <span class="glyphicon glyphicon-user">
+            </span>
+            </a>
+        </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+            </a>
+        </div>
+    </div>
+</nav>
+</div>

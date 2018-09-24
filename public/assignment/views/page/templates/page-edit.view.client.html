@@ -1,0 +1,101 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4 hidden-xs">
+                    <div class="navbar-text pull-left">
+                        <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page">
+            <span class="glyphicon glyphicon-chevron-left">
+            </span>
+                        </a>
+                    </div>
+                    <div class="navbar-text pull-right">
+                        <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/new">
+            <span class="glyphicon glyphicon-plus">
+            </span>
+                        </a>
+                    </div>
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page">
+                            <b class="kp-navbar-text">Pages</b>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="visible-xs navbar-text pull-left">
+                        <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page">
+                 <span class="glyphicon glyphicon-chevron-left">
+                 </span>
+                        </a>
+                    </div>
+                    <div class="navbar-text pull-right">
+                        <a ng-click="model.updatePage(model.page)">
+            <span class="glyphicon glyphicon-ok">
+            </span>
+                        </a>
+                    </div>
+                    <div class="navbar-header">
+                        <a class="navbar-brand"
+                           href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}"><b
+                                class="kp-navbar-text">Edit Page</b>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="col-sm-4 hidden-xs">
+            <div class="container-fluid">
+                <ul class="kp-list">
+                    <li ng-repeat="page in model.pages" class="kp-list-item">
+                        <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}/widget">{{page.name}}</a>
+                        <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}"
+                           class="container-fluid pull-right">
+                <span class="glyphicon glyphicon-cog">
+                </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="col-xs-12 col-sm-8 kp-right-pane kp-border container">
+
+            <div ng-show="model.message" class="alert alert-success" role="alert">
+                {{model.message}}
+            </div>
+            <div class="form-group">
+                <label for="Name">Name</label>
+                <input ng-model="model.page.name" type="text" class="form-control" id="name" value="Blog Post">
+            </div>
+            <div class="form-group">
+                <label for="title">Page title</label>
+                <input ng-model="model.page.description" type="text" class="form-control" id="title"
+                       placeholder="Page Title">
+            </div>
+            <a ng-click="model.deletePage()" class="btn btn-danger btn-block">
+                Delete
+            </a>
+
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a href="#/user/{{model.userId}}">
+            <span class="glyphicon glyphicon-user">
+            </span>
+            </a>
+        </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+            </a>
+        </div>
+    </div>
+</nav>
+</div>

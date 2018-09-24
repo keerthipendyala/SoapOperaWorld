@@ -1,0 +1,104 @@
+input.form-control {
+    margin-bottom: 5px;
+}
+
+body {
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+
+a,u{
+    text-decoration: none !important;
+
+}
+
+.navbar{
+    background-color: darkslategrey;
+}
+
+.navbar a:hover{
+    background: transparent;
+    color:yellow;
+}
+
+.navbar-default a:hover{
+    color:yellow;
+}
+
+.kp-navbar-text{
+    font-weight: bold;
+    color: lightslategrey;
+}
+
+
+.glyphicon{
+    color: lightslategrey;
+}
+
+.kp-gly{
+    position: absolute;
+    right: 30px;
+    background-color: white;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    border-bottom-left-radius: 5px;
+    opacity: 0.9;
+}
+
+
+.kp-gly-image{
+    z-index:2;
+    position :absolute;
+}
+
+.kp-list{
+    list-style-type:none;
+    padding-left:15px;
+}
+
+.kp-list-item{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.kp-right-pane{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow-y: auto;
+}
+
+.kp-border{
+    border-left:1px solid lightslategrey;
+}
+
+.jga-toolbar {
+    position: absolute;
+    right: 30px;
+    background-color: white;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    border-bottom-left-radius: 5px;
+    opacity: 0.7;
+    z-index : 2;
+}
+
+.youtube-widget {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+
+.youtube-widget iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

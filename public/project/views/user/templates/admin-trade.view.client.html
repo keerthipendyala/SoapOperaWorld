@@ -1,0 +1,81 @@
+<div class="container-fluid">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar-header">
+            <a>
+            <span id="open" ng-click="model.openNav()" class="glyphicon glyphicon-th pull-left">
+            </span>
+            </a>
+            <a class="navbar-brand" href="#/show">
+                <b class="kp-navbar-text pull-right">S.O.W</b>
+            </a>
+
+        </div>
+    </nav>
+
+    <div id="mySidenav" class="sidenav">
+        <a>
+      <span ng-click="model.closeNav()" class="glyphicon glyphicon-remove pull-right">
+            </span>
+        </a>
+        <div ng-show="model.aid">
+            <a href="#/user">Profile</a>
+            <a href="#/admin/buyers">User Information</a>
+            <a href="#/admin/trade">Trade Information</a>
+        </div>
+    </div>
+
+    <div id="body-div">
+        <div id="main">
+            <div class="alert alert-danger" ng-show="model.error">
+                {{model.error}}
+            </div>
+
+
+            <div class="alert alert-success" ng-show="model.message">
+                {{model.message}}
+            </div>
+        <div class="container-fluid" ng-hide="model.message">
+            <table class="table table-responsive">
+                <thead>
+                <tr>
+                    <th>Trade Id</th>
+                    <th>Seller Name</th>
+                    <th class="hidden-xs">Contact</th>
+                    <th>Buyer Name</th>
+                    <th class="hidden-xs">Contact</th>
+                    <th class="hidden-xs">Show Name</th>
+
+                </tr>
+                </thead>
+                <tbody ng-repeat="trade in model.trades track by $index">
+
+                <tr ng-if="trade.sellerId && trade.buyerId">
+                    <td>{{trade._id}}</td>
+                    <td>{{model.seller_info[$index].sellerId.firstName}} {{model.seller_info[$index].sellerId.firstName}}</td>
+                    <td class="hidden-xs">{{model.seller_info[$index].sellerId.email}}</td>
+                    <td>{{model.buyer_info[$index].buyerId.firstName}} {{model.buyer_info[$index].buyerId.lastName}}</td>
+                    <td class="hidden-xs">{{model.buyer_info[$index].buyerId.email}}</td>
+                    <td class="hidden-xs"><a href ="#/user/search/{{model.shows_info[$index].id}}">{{model.shows_info[$index].name}}</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a href="#/user">
+            <span class="glyphicon glyphicon-user">
+            </span>
+            </a>
+        </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+            </a>
+        </div>
+    </div>
+</nav>
+

@@ -1,0 +1,64 @@
+<div class="container-fluid">
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+    <div>
+        <div class="navbar-text pull-left">
+            <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
+            <span class="glyphicon glyphicon-chevron-left">
+            </span>
+            </a>
+        </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/new">
+              <b class="kp-navbar-text">Choose Widget</b>
+            </a>
+        </div>
+    </div>
+    </div>
+</nav>
+
+<div>
+    <ul class="kp-list">
+        <li class="kp-list-item">
+            <div class = "row container-fluid">
+                <a ng-click="model.createWidget('HEADING')">Header</a>
+            </div>
+        </li>
+        <li class="kp-list-item">
+            <div class = "row container-fluid">
+                <a ng-click="model.createWidget('HTML')">HTML</a>
+            </div>
+        </li>
+        <li class="kp-list-item">
+            <div class = "row container-fluid">
+                <a ng-click="model.createWidget('IMAGE')">Image</a>
+            </div>
+        </li>
+        <li class="kp-list-item">
+            <div class = "row container-fluid">
+                <a ng-click="model.createWidget('YOUTUBE')">Youtube</a>
+            </div>
+        </li>
+        <li class="kp-list-item">
+            <div class = "row container-fluid">
+                <a ng-click="model.createWidget('TEXT')">Text</a>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+    <div class="navbar-text pull-right">
+        <a href="#/user/{{model.userId}}">
+            <span class="glyphicon glyphicon-user">
+            </span>
+        </a>
+    </div>
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+        </a>
+    </div>
+    </div>
+</nav>
+</div>

@@ -1,0 +1,85 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-text pull-left">
+            <a href="#/user">
+            <span class="glyphicon glyphicon-chevron-left">
+            </span>
+            </a>
+        </div>
+        <div class="navbar-text pull-right">
+            <a ng-hide="model.uid" href="#/userlogin" class="btn btn-sm btn-primary">Login</a>
+            </a>
+        </div>
+        <div ng-show="model.uid" class="navbar-text pull-right">
+            <a ng-click="model.logout()" class="btn btn-sm btn-danger">Logout</a>
+            </a>
+        </div>
+        <div class="navbar-header pull-left">
+            <a class="navbar-brand" href="#/show">
+               <b class="kp-navbar-text">SoapOperaWorld</b>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div id="body-div">
+        <div class="container">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-ng-repeat="backdrop_img in model.backdrop | limitTo:8"
+                        data-slide-to="{{$index}}" data-ng-class="{active:$first}"></li>
+                </ol>
+
+                <div class="carousel-inner" role="listbox">
+                    <div class="item" data-ng-class="{active:$first}" data-ng-repeat="backdrop_img in model.backdrop">
+                        <img ng-src="{{backdrop_img}}" alt="TvShow">
+                        <a href ="#/" class="carousel-caption">
+                            <h2>{{model.tvshows[$index].name}}</h2>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group car-search">
+                <input ng-model="show.showname" type="text" class="form-control" placeholder="Search for TV shows!"/>
+                <span class="input-group-addon">
+            <a>
+               <i ng-click="model.getTVShows(show)" class="fa fa-search"></i>
+            </a></span>
+            </div>
+        </div>
+
+
+        <br/>
+
+        <br/>
+
+            <div ng-show="model.message" class="alert alert-danger" role="alert">
+                {{model.message}}
+            </div>
+
+            <div class="row container-fluid" ng-show="model.shows">
+                <div ng-repeat="showarr in model.shows">
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" ng-if="showarr.poster_path">
+                        <a href="#/user/search/{{showarr.id}}">
+                            <img class="img-responsive-home thumbnail"
+                                 ng-src="https://image.tmdb.org/t/p/w500/{{showarr.poster_path}}"
+                                 alt="{{showarr.poster_path}}" id="shows"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row container-fluid" ng-hide="model.shows">
+                <div ng-repeat="showarr in model.tvshow">
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" ng-if="showarr.poster_path">
+                        <a href="#/user/search/{{showarr.id}}">
+                            <img class="img-responsive-home thumbnail"
+                                 ng-src="https://image.tmdb.org/t/p/w500/{{showarr.poster_path}}"
+                                 alt="{{showarr.poster_path}}"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

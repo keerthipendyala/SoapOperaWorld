@@ -1,0 +1,81 @@
+<div class="container-fluid">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar-header">
+            <a>
+            <span id="open" ng-click="model.openNav()" class="glyphicon glyphicon-th pull-left">
+            </span>
+            </a>
+            <a class="navbar-brand" href="#/show">
+                <b class="kp-navbar-text pull-right">S.O.W</b>
+            </a>
+        </div>
+        <div class="navbar navbar-body pull-right" style="padding-right: 15px; padding-top: 15px">
+            <a href="#/admin/create">
+              <span> <i class="fa fa-user-plus " aria-hidden="true"></i></span>
+            </a>
+        </div>
+    </nav>
+
+    <div id="mySidenav" class="sidenav">
+        <a>
+      <span ng-click="model.closeNav()" class="glyphicon glyphicon-remove pull-right">
+            </span>
+        </a>
+        <div ng-show="model.aid">
+            <a href="#/user">Profile</a>
+            <a href="#/admin/buyers">User Information</a>
+            <a href="#/admin/trade">Trade Information</a>
+        </div>
+    </div>
+
+    <div id="body-div">
+        <div id="main">
+
+            <div class="alert alert-success" ng-show="model.message">
+                {{model.message}}
+            </div>
+        <div class="container-fluid" ng-hide="model.message">
+            <table class="table table-responsive">
+                <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th class="hidden-xs">Type</th>
+                    <th class="hidden-xs">Email</th>
+                    <th class="hidden-xs">Phone</th>
+                    <th class="hidden-xs">Update</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="user in model.users | filter:{ type : '!admin'}">
+                    <td>{{user.firstName}}</td>
+                    <td>{{user.lastName}}</td>
+                    <td class="hidden-xs">{{user.type}}</td>
+                    <td class="hidden-xs">{{user.email}}</td>
+                    <td class="hidden-xs">{{user.phone}}</td>
+                    <td class="hidden-xs"><a href="#/admin/edit/{{user._id}}">
+                    <i class="fa fa-cog"></i></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+</div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a href="#/user">
+            <span class="glyphicon glyphicon-user">
+            </span>
+            </a>
+        </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+            </a>
+        </div>
+    </div>
+</nav>
+

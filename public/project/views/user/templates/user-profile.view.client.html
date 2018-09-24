@@ -1,0 +1,103 @@
+<div class="container-fluid">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+        <div class="navbar-text pull-right">
+            <a ng-click=model.update(model.user)>
+            <span class="glyphicon glyphicon-ok">
+            </span>
+            </a>
+        </div>
+        <div class="navbar-header">
+            <span id="open" ng-click="model.openNav()" class="glyphicon glyphicon-th pull-left">
+            </span>
+            <a class="navbar-brand" href="#/show">
+                <b class="kp-navbar-text pull-right">S.O.W</b>
+            </a>
+        </div>
+        </div>
+    </nav>
+
+
+    <div id="mySidenav" class="sidenav">
+      <span ng-click="model.closeNav()" class="glyphicon glyphicon-remove pull-right">
+            </span>
+            <a href="#/user">Profile</a>
+        <div ng-show="model.bid">
+            <a href="#/buyer/likes">Likes</a>
+            <a href="#/buyer/wishlist">Wishlist</a>
+            <a href="#/buyer/own">Bought</a>
+            <a href="#/buyer/trade">Transfers</a>
+            <a href="#/buyer/fav">Favourite Sellers</a>
+        </div>
+        <div ng-show="model.sid">
+            <a href="#/seller/forsale">Inventory</a>
+            <a href="#/seller/trade">Trade</a>
+        </div>
+        <div ng-show="model.aid">
+            <a href="#/admin/buyers">User Information</a>
+            <a href="#/admin/trade">Trade Information</a>
+        </div>
+    </div>
+
+    <div id="body-div">
+        <div id="main">
+            <h1>Profile</h1>
+            <div class="alert alert-danger" ng-show="model.error">
+                {{model.error}}
+            </div>
+
+
+            <div class="alert alert-success" ng-show="model.message">
+                {{model.message}}
+            </div>
+            <br/>
+            <form>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input ng-model="model.user.username" type="text" class="form-control" id="username">
+                </div>
+                <div class="form-group">
+                    <label for="email">Password</label>
+                    <input ng-model="model.user.password" type="password" class="form-control" id="password">
+                </div>
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input ng-model="model.user.firstName" type="text" class="form-control" id="first-name">
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input ng-model="model.user.lastName" type="text" class="form-control" id="last-name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input ng-model="model.user.email" type="email" class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input ng-model="model.user.phone" type="text" class="form-control" id="phone">
+                </div>
+            </form>
+
+            <a class="btn btn-success btn-block" href="#/user/search">Shows</a>
+            <a class="btn btn-danger btn-block" ng-click="model.deleteUser()">Deactivate</a>
+            <a class="btn btn-primary  btn-block" ng-click="model.logout()">Logout</a>
+
+        </div>
+    </div>
+    <div class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container-fluid">
+            <div class="navbar-text pull-right">
+                <a href="#/user">
+            <span class="glyphicon glyphicon-user">
+            </span>
+                </a>
+            </div>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                </a>
+            </div>
+        </div>
+    </div>
+    </nav>
+</div>
